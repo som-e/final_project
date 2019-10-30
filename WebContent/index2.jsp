@@ -25,7 +25,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong>버거킹</strong></a> <!-- 예시 글씨체 변경 예정 -->
+									<a class="logo"><strong><% %>버거킹</strong></a> <!-- 예시 글씨체 변경 예정 -->
 									<ul class="icons">
 										<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span class="label"><img src="images/yogiyo.png"width="40" height="40" alt="요기요"></span></a></li>
 										<li><a href="#"><span class="label"><img src="images/bae.png"width="40" height="40" alt="배민"></span></a></li>
@@ -40,13 +40,13 @@
 									<div class="content">
 										<header>
 											<table style="border-collapse: inherit;">
-												<tr >
+												<tr style="background-color: transparent; font-size : 20px;"">
 													<td>예상도착시간</td>
 													<td>남은거리</td>
 												</tr>
 												<tr>
-													<td>시간-m</td>
-													<td>거리-m</td>
+													<td><% %>시간-m</td><!-- 시간과 거리는 추후에 받아서 표시할 예정 -->
+													<td><% %>거리-m</td>
 												</tr>
 											</table>
 										</header>
