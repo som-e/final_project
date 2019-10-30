@@ -9,7 +9,7 @@
 -->
 <html>
 	<head>
-		<title>TESTING By HWANGSUMI</title>
+		<title> DeliverySystem</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,7 +25,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<a class="logo"><strong>버거킹</strong></a> <!-- 예시 글씨체 변경 예정 -->
 									<ul class="icons">
 										<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span class="label"><img src="images/yogiyo.png"width="40" height="40" alt="요기요"></span></a></li>
 										<li><a href="#"><span class="label"><img src="images/bae.png"width="40" height="40" alt="배민"></span></a></li>
@@ -39,17 +39,28 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>this is test for GIT<br />
+											<table style="">
+												<tr >
+													<td>예상도착시간</td>
+													<td>남은거리</td>
+												</tr>
+												<tr>
+													<td>시간-m</td>
+													<td>거리-m</td>
+												</tr>
+											</table>
+										</header>
+											<%-- <h1><%  %><br />
 											by HTML5 UP</h1>
 											<p>A free and fully responsive site template</p>
 										</header>
 										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										<ul class="actions">
 											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
+										</ul> --%>
 									</div>
 									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="images/pic10.jpg" alt="" /> <!-- 지도 넣을 공간 -->
 									</span>
 								</section>
 
