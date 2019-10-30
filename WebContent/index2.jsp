@@ -9,11 +9,7 @@
 -->
 <html>
 	<head>
-<<<<<<< HEAD
 		<title> DeliverySystem</title>
-=======
-		<title>TESTING By 혜찬혜찬혜찬</title>
->>>>>>> f7988b6c6d332957d8a5e8ef058926d7466a86bb
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -43,7 +39,7 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<table style="">
+											<table style="border-collapse: inherit;">
 												<tr >
 													<td>예상도착시간</td>
 													<td>남은거리</td>
