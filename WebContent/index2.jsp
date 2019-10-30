@@ -52,14 +52,6 @@
 												<tr>
 													<td><% %>시간-m</td><!-- 시간과 거리는 추후에 받아서 표시할 예정 -->
 													<td><% %>거리-m</td>
-											<table>
-												<tr style="border-width:0px">
-													<td>예상도착시간</td>
-													<td>남은거리</td>
-												</tr>
-												<tr style="border-width:0px">
-													<td>시간</td>
-													<td>거리</td>
 												</tr>
 											</table>
 										</header>
