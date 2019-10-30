@@ -9,7 +9,11 @@
 -->
 <html>
 	<head>
+<<<<<<< HEAD
 		<title> DeliverySystem</title>
+=======
+		<title>TESTING By ÇıÂùÇıÂùÇıÂù</title>
+>>>>>>> f7988b6c6d332957d8a5e8ef058926d7466a86bb
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
