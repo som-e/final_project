@@ -10,10 +10,16 @@
 <html>
 	<head>
 		<title> DeliverySystem</title>
+<<<<<<< Updated upstream
+=======
+		<title>TESTING By 혜찬혜찬혜찬</title>
+>>>>>>> Stashed changes
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -47,6 +53,14 @@
 												<tr>
 													<td><% %>시간-m</td><!-- 시간과 거리는 추후에 받아서 표시할 예정 -->
 													<td><% %>거리-m</td>
+											<table>
+												<tr style="border-width:0px">
+													<td>예상도착시간</td>
+													<td>남은거리</td>
+												</tr>
+												<tr style="border-width:0px">
+													<td>시간</td>
+													<td>거리</td>
 												</tr>
 											</table>
 										</header>
