@@ -9,12 +9,19 @@
 -->
 <html>
 	<head>
-		<title>please checkxdffgsfgfg</title>
+		<title> DeliverySystem</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
+		<style>
+		.star-rating { width:205px; }
+		.star-rating,.star-rating span { display:inline-block; height:39px; overflow:hidden; background:url(star.png)no-repeat; }
+		.star-rating span{ background-position:left bottom; line-height:0; vertical-align:top; }
+		</style>
+		
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -26,13 +33,10 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<a class="logo"><strong>점포명 : <% %></strong></a> <!-- 점표명 받아서 표시할 부분 -->
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+										<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span class="label"><img src="images/yogiyo.png"width="40" height="40" alt="요기요"></span></a></li>
+										<li><a href="#"><span class="label"><img src="images/bae.png"width="40" height="40" alt="배민"></span></a></li>
 									</ul>
 								</header>
 
@@ -40,114 +44,46 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>this is test for GIT<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
+											<table style="border-collapse: inherit;">
+												<tr style="background-color: transparent; font-size : 20px;">
+													<td>예상도착시간</td>
+													<td>남은거리</td>
+												</tr>
+												<tr>
+													<td><% %>시간-m</td><!-- 시간과 거리는 추후에 받아서 표시할 예정 -->
+													<td><% %>거리-m</td>
+												</tr>
+											</table>
 										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
 									</div>
 									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="images/pic10.jpg" alt="" /> <!-- 지도 넣을 공간 -->
 									</span>
 								</section>
 
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Erat lacinia</h2>
+										<h2><% %>기사님</h2><!-- 기사님 성함을 받아와 표시할 곳 -->
 									</header>
-									<div class="features">
+									<div class="post">
 										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											</div>
-										</article>
+											<%//if(profile==null){ %> <!-- DB에서 사진을 받아와 표시, null값 일경우 디폴트 프로필 표시 -->
+											<span class="image"><img src="images/profile.png"width="100" height="120" alt="프로필"></span>
+											<%//}else{%>
+											<!--class="image"><img src=""width="100" height="120" alt="프로필"> 기사님사진 받을 곳 -->
+											<%//}%>	
+												<h4>소속 : <% %><br><br><!-- 소속 받아서 표시 -->									
+												연락처 : <% %></h4><!-- 전화번호 밭아서 표시할 부분 -->
+												<div class="wrap-star">
+													<h4>평균점수</h4>
+												    <div class='star-rating'>
+												        <span style ="width:70%"></span><!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
+												    </div>
+												</div>
+										 </article>
 									</div>
 								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ipsum sed dolor</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>Interdum aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
-											</ul>
-										</article>
-									</div>
-								</section>
-
 						</div>
 					</div>
 
@@ -155,12 +91,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
+							<!-- Search 검색기능 일단 무시하기로 합니다-->
+								<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section> -->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -168,70 +104,32 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										<li>
+										<li><a href="index.html">메인</a></li>
+										<li><a href="#">로그인</a></li><!-- 로그인페이지 구현예정 -->
+										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
+										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
+										<!-- <li>
 											<span class="opener">Submenu</span>
 											<ul>
 												<li><a href="#">Lorem Dolor</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
 												<li><a href="#">Tempus Magna</a></li>
 												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
+											</ul> 참고용으로 남겨둠--> 
 									</ul>
 								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
+								
 							<!-- Section -->
 								<section>
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<p>문제 발생시 다음 연락처로 연락 바랍니다.</p>
 									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="icon solid fa-envelope"><a href="#">genie141930@gmail.com</a></li>
+										<li class="icon solid fa-phone">(010) 5091-0984</li>
+										<li class="icon solid fa-home">광주광역시 북구 용봉동 77<br />
+										전남대학교 생활관 9A동</li>
 									</ul>
 								</section>
 

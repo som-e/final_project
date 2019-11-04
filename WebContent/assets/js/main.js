@@ -258,5 +258,19 @@
 				});
 
 			});
+			/* 추가부분  --*/
+			$(document).ready(function(){
+				  var fileTarget = $('.filebox .upload-hidden');
 
-})(jQuery);
+				    fileTarget.on('change', function(){
+				        if(window.FileReader){
+				            var filename = $(this)[0].files[0].name;
+				        } else {
+				            var filename = $(this).val().split('/').pop().split('\\').pop();
+				        }
+
+				        $(this).siblings('.upload-name').val(filename);
+				    });
+				}); /* --추가부분 */
+})
+(jQuery);
