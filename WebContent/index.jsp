@@ -56,8 +56,43 @@
 											</table>
 										</header>
 									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" /> <!-- 지도 넣을 공간 -->
+	<span class="image object">
+						
+<div id="map" style="width:100%; height:400px"></div>
+							
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2b069a55b436aecc3dc43b2467f6bfa2"></script>
+
+<script>
+
+navigator.geolocation.getCurrentPosition(function(pos) {
+ 
+	var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude;
+
+    var container = document.getElementById('map');
+    var options = {
+    		center: new kakao.maps.LatLng(lat , lon),
+    		level: 3
+    	};
+
+    var map = new kakao.maps.Map(container, options);
+
+
+ // 마커가 표시될 위치입니다 
+ var markerPosition  = new kakao.maps.LatLng(lat, lon); 
+
+ // 마커를 생성합니다
+ var marker = new kakao.maps.Marker({
+     position: markerPosition
+ });
+
+ // 마커가 지도 위에 표시되도록 설정합니다
+ marker.setMap(map);
+    
+});
+	</script>
+										
+										 <!-- 지도 넣을 공간 -->
 									</span>
 								</section>
 
