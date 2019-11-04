@@ -38,11 +38,7 @@
 														<ul class="actions">
 															<li><input type="text" name="phone_num" placeholder="전화번호를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
-														<ul class="filebox bs3-primary">
-															<input class="upload-name" value="사진선택" disabled="disabled">
-                           									<label for="ex_filename">업로드</label> 
-                         									<input type="file" id="ex_filename" class="upload-hidden"> 
-														</ul>
+														
 														<ul class="actions">
 															<li><input type="submit" value="join us" class="button fit" style="text-align:center; width:150px; height:50px;"></li>
 															<li><a href="#" class="button"  style="text-align:center; line-height: 50px; width:150px; height:50px;">CANCEL</a></li> <!-- 뒤로가기 -->
