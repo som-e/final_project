@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
-    <!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<title> DeliverySystem</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -17,13 +11,26 @@
 		<style>
 		.star-rating { width:205px; }
 		.star-rating,.star-rating span { display:inline-block; height:39px; overflow:hidden; background:url(star.png)no-repeat; }
-		.star-rating span{ background-position:left bottom; line-height:0; vertical-align:top; }
+		.star-rating span{ text-align: center; }
+		img{
+		border: 3px solid red:
+		width:100px:
+		height:100px:
+		display:block:
+		margin-left:auto:
+		margin-right:auto:
+		}
 		</style>
 		
 	</head>
+<body class="is-preload">
+<!--드라이버 화면으로 드라이버 이름(D_NAME)이랑 드라이버사진(PHOTO)을 보여주기 위한 페이지 ppt 15p
 
-	<body class="is-preload">
+*변수이름은 ()안에 있어요~
 
+필요한 데이터: 화면에 보여주기 위해 로그인한 드라이버 사용자의  드라이버 이름(D_NAME)이랑 드라이버사진(PHOTO)이 필요
+
+-->
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -33,57 +40,23 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong>점포명 : <% %></strong></a> <!-- 점표명 받아서 표시할 부분 -->
-									<ul class="icons">
-										<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span class="label"><img src="images/yogiyo.png"width="40" height="40" alt="요기요"></span></a></li>
-										<li><a href="#"><span class="label"><img src="images/bae.png"width="40" height="40" alt="배민"></span></a></li>
-									</ul>
+									<a class="logo"><strong> <%=D_NAME%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
+					
 								</header>
 
 							<!-- Banner -->
 								<section id="banner">
-									<div class="content">
-										<header>
-											<table style="border-collapse: inherit;">
-												<tr style="background-color: transparent; font-size : 20px;"">
-													<td>예상도착시간</td>
-													<td>남은거리</td>
-												</tr>
-												<tr>
-													<td><% %>시간-m</td><!-- 시간과 거리는 추후에 받아서 표시할 예정 -->
-													<td><% %>거리-m</td>
-												</tr>
-											</table>
-										</header>
-									</div>
+								
+								<!--여기에 드라이버 사진을  넣어야 하는데 못했습니다.-->
 									<span class="image object">
-										<img src="images/pic10.jpg" alt="" /> <!-- 지도 넣을 공간 -->
+									<img src="images/pic10.jpg" alt="" /> +
 									</span>
+								<!--여기에 드라이버 사진을  넣어야 하는데 못했습니다.-->
+								
 								</section>
 
 							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2><% %>기사님</h2><!-- 기사님 성함을 받아와 표시할 곳 -->
-									</header>
-									<div class="post">
-										<article>
-											<%//if(profile==null){ %> <!-- DB에서 사진을 받아와 표시, null값 일경우 디폴트 프로필 표시 -->
-											<span class="image"><img src="images/profile.png"width="100" height="120" alt="프로필"></span>
-											<%//}else{%>
-											<!--class="image"><img src=""width="100" height="120" alt="프로필"> 기사님사진 받을 곳 -->
-											<%//}%>	
-												<h4>소속 : <% %><br><br><!-- 소속 받아서 표시 -->									
-												연락처 : <% %></h4><!-- 전화번호 밭아서 표시할 부분 -->
-												<div class="wrap-star">
-													<h4>평균점수</h4>
-												    <div class='star-rating'>
-												        <span style ="width:70%"></span><!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
-												    </div>
-												</div>
-										 </article>
-									</div>
-								</section>
+								
 						</div>
 					</div>
 
@@ -109,13 +82,7 @@
 										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
 										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
 										<!-- <li>
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul> 참고용으로 남겨둠--> 
+											
 									</ul>
 								</nav>
 								

@@ -3198,7 +3198,7 @@ input, select, textarea {
 
 			#sidebar .toggle:before {
 				content: '\f0c9';
-				font-size: 2rem;
+				font-size: 0rem;
 				height: inherit;
 				left: 0;
 				line-height: inherit;
@@ -3237,10 +3237,10 @@ input, select, textarea {
 					width: 5em;
 				}
 
-					#sidebar .toggle:before {
+				 	#sidebar .toggle:before {
 						font-size: 1.5rem;
 					}
-
+ 
 				#sidebar.inactive {
 					margin-left: -24em;
 				}
