@@ -63,7 +63,7 @@
 					<div class="content">
 						<header>
 							<table style="border-collapse: inherit;">
-								<tr style="background-color: transparent; font-size: 20px;">
+								<tr style="background-color: transparent; font-size: 20px; padding: 5em 0 1em 0;">
 									<td>예상도착시간</td>
 									<td>남은거리</td>
 								</tr>
@@ -79,9 +79,11 @@
 							</table>
 						</header>
 					</div>
-					<span class="image object">
 
-						<div id="map" style="width: 100%; height: 400px"></div> 
+					<div class="image object">
+
+						<div id="map" style="width: 100%; height:25
+						0px"> </div> 
 		
 				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2b069a55b436aecc3dc43b2467f6bfa2&libraries=services"></script>
 <script>
@@ -142,11 +144,9 @@ geocoder.addressSearch('북구 설죽로 214번길 100-4', function(result, status) {
 
 </script>
 
-<form action="test.do" method='post'> 
-<input type="submit" value='click'>
-</form>
+					</div>
 
-					</span>
+
 				</section>
 
 				<!-- Section -->
