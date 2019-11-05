@@ -92,7 +92,6 @@
 
 navigator.geolocation.getCurrentPosition(function(pos) {
 	
-	
 var mapContainer = document.getElementById('map'),  // 지도를 표시할 div 
 mapOption = {
   center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude), // 지도의 중심좌표
@@ -105,31 +104,48 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 //주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 
-//주소로 좌표를 검색합니다
 
+
+//주소로 좌표를 검색합니다
 geocoder.addressSearch('북구 설죽로 214번길 100-4', function(result, status) {
-                            //여기에 input 값을 이용해서 DB를 통해 주소 얻어오기
+//여기에 input 값을 이용해서 DB를 통해 주소 얻어오기
 // 정상적으로 검색이 완료됐으면 
- if (status === kakao.maps.services.Status.OK) {
+
+if (status === kakao.maps.services.Status.OK) {
 	 
     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
+  /*    var start_coords = new kako.maps.LatLng(33.450705, 126.570677);
+    */
     // 결과값으로 받은 위치를 마커로 표시합니다
-    var marker = new kakao.maps.Marker({
+   var marker = new kakao.maps.Marker({
         map: map,
         position: coords
     });
 
+   /*  var marker2 = new kakao.maps.Marker({
+    	
+    	map: map, // 마커를 표시할 지도
+        position: start_coords, // 마커를 표시할 위치
+        title : '출발', // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
+    });
+     */
+    
     // 인포윈도우로 장소에 대한 설명을 표시합니다
     var infowindow = new kakao.maps.InfoWindow({
         content: '<div style="width:150px;text-align:center;padding:6px 0;">here</div>'
     });
     infowindow.open(map, marker);
+  
+    /*   infowindow.open(map , marker2); 
+   */  // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 
-    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-    map.setCenter(coords);
+   map.setCenter(coords);
+
 } 
 
+                            
+                            
  else {
 	 
 	 alert('fail');
