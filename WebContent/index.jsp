@@ -45,14 +45,14 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a class="logo"><strong>Á¡Æ÷¸í : <% %></strong></a>
-					<!-- Á¡Ç¥¸í ¹Ş¾Æ¼­ Ç¥½ÃÇÒ ºÎºĞ -->
+					<a class="logo"><strong>ì í¬ëª… : <% %></strong></a>
+					<!-- ì í‘œëª… ë°›ì•„ì„œ í‘œì‹œí•  ë¶€ë¶„ -->
 					<ul class="icons">
 						<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span
 								class="label"><img src="images/yogiyo.png" width="40"
-									height="40" alt="¿ä±â¿ä"></span></a></li>
+									height="40" alt="ìš”ê¸°ìš”"></span></a></li>
 						<li><a href="#"><span class="label"><img
-									src="images/bae.png" width="40" height="40" alt="¹è¹Î"></span></a></li>
+									src="images/bae.png" width="40" height="40" alt="ë°°ë¯¼"></span></a></li>
 					</ul>
 				</header>
 
@@ -62,16 +62,16 @@
 						<header>
 							<table style="border-collapse: inherit;">
 								<tr style="background-color: transparent; font-size: 20px; padding: 5em 0 1em 0;">
-									<td>¿¹»óµµÂø½Ã°£</td>
-									<td>³²Àº°Å¸®</td>
+									<td>ì˜ˆìƒë„ì°©ì‹œê°„</td>
+									<td>ë‚¨ì€ê±°ë¦¬</td>
 								</tr>
 								<tr>
 									<td>
-										<% %>½Ã°£-m
+										<% %>ì‹œê°„-m
 									</td>
-									<!-- ½Ã°£°ú °Å¸®´Â ÃßÈÄ¿¡ ¹Ş¾Æ¼­ Ç¥½ÃÇÒ ¿¹Á¤ -->
+									<!-- ì‹œê°„ê³¼ ê±°ë¦¬ëŠ” ì¶”í›„ì— ë°›ì•„ì„œ í‘œì‹œí•  ì˜ˆì • -->
 									<td>
-										<% %>°Å¸®-m
+										<% %>ê±°ë¦¬-m
 									</td>
 								</tr>
 							</table>
@@ -85,39 +85,40 @@
 		
 				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2b069a55b436aecc3dc43b2467f6bfa2&libraries=services"></script>
 <script>
-//³ªÀÇ À§Ä¡ °Ë»ö -> 
+//ë‚˜ì˜ ìœ„ì¹˜ ê²€ìƒ‰ -> 
 navigator.geolocation.getCurrentPosition(function(pos) {
 	
-	
-var mapContainer = document.getElementById('map'),  // Áöµµ¸¦ Ç¥½ÃÇÒ div 
+var mapContainer = document.getElementById('map'),  // ì§€ë„ë¥¼ í‘œì‹œí•  div 
 mapOption = {
-  center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-  level: 2 // ÁöµµÀÇ È®´ë ·¹º§
+  center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+  level: 2 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
 };  
-//Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù    
+//ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
-//ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var geocoder = new kakao.maps.services.Geocoder();
-//ÁÖ¼Ò·Î ÁÂÇ¥¸¦ °Ë»öÇÕ´Ï´Ù
-geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
-                            //¿©±â¿¡ input °ªÀ» ÀÌ¿ëÇØ¼­ DB¸¦ ÅëÇØ ÁÖ¼Ò ¾ò¾î¿À±â
-// Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
- if (status === kakao.maps.services.Status.OK) {
+
+//ì£¼ì†Œë¡œ ì¢Œí‘œë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤
+geocoder.addressSearch('ë¶êµ¬ ì„¤ì£½ë¡œ 214ë²ˆê¸¸ 100-4', function(result, status) {
+//ì—¬ê¸°ì— input ê°’ì„ ì´ìš©í•´ì„œ DBë¥¼ í†µí•´ ì£¼ì†Œ ì–»ì–´ì˜¤ê¸°
+// ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
+
+if (status === kakao.maps.services.Status.OK) {
 	 
     var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-    // °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡¸¦ ¸¶Ä¿·Î Ç¥½ÃÇÕ´Ï´Ù
-    var marker = new kakao.maps.Marker({
+
+    // ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¥¼ ë§ˆì»¤ë¡œ í‘œì‹œí•©ë‹ˆë‹¤
+   var marker = new kakao.maps.Marker({
         map: map,
         position: coords
     });
-    // ÀÎÆ÷À©µµ¿ì·Î Àå¼Ò¿¡ ´ëÇÑ ¼³¸íÀ» Ç¥½ÃÇÕ´Ï´Ù
+
+    // ì¸í¬ìœˆë„ìš°ë¡œ ì¥ì†Œì— ëŒ€í•œ ì„¤ëª…ì„ í‘œì‹œí•©ë‹ˆë‹¤
     var infowindow = new kakao.maps.InfoWindow({
         content: '<div style="width:150px;text-align:center;padding:6px 0;">here</div>'
     });
     infowindow.open(map, marker);
-    // ÁöµµÀÇ Áß½ÉÀ» °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡·Î ÀÌµ¿½ÃÅµ´Ï´Ù
-    map.setCenter(coords);
-} 
+
  else {
 	 
 	 alert('fail');
@@ -136,33 +137,33 @@ geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
 				<section>
 					<header class="major">
 						<h2>
-							<% %>±â»ç´Ô
+							<% %>ê¸°ì‚¬ë‹˜
 						</h2>
-						<!-- ±â»ç´Ô ¼ºÇÔÀ» ¹Ş¾Æ¿Í Ç¥½ÃÇÒ °÷ -->
+						<!-- ê¸°ì‚¬ë‹˜ ì„±í•¨ì„ ë°›ì•„ì™€ í‘œì‹œí•  ê³³ -->
 					</header>
 					<div class="post">
 						<article>
 							<%//if(profile==null){ %>
-							<!-- DB¿¡¼­ »çÁøÀ» ¹Ş¾Æ¿Í Ç¥½Ã, null°ª ÀÏ°æ¿ì µğÆúÆ® ÇÁ·ÎÇÊ Ç¥½Ã -->
+							<!-- DBì—ì„œ ì‚¬ì§„ì„ ë°›ì•„ì™€ í‘œì‹œ, nullê°’ ì¼ê²½ìš° ë””í´íŠ¸ í”„ë¡œí•„ í‘œì‹œ -->
 							<span class="image"><img src="images/profile.png"
-								width="100" height="120" alt="ÇÁ·ÎÇÊ"></span>
+								width="100" height="120" alt="í”„ë¡œí•„"></span>
 							<%//}else{%>
-							<!--class="image"><img src=""width="100" height="120" alt="ÇÁ·ÎÇÊ"> ±â»ç´Ô»çÁø ¹ŞÀ» °÷ -->
+							<!--class="image"><img src=""width="100" height="120" alt="í”„ë¡œí•„"> ê¸°ì‚¬ë‹˜ì‚¬ì§„ ë°›ì„ ê³³ -->
 							<%//}%>
 							<h4>
-								¼Ò¼Ó :
+								ì†Œì† :
 								<% %><br>
 								<br>
-								<!-- ¼Ò¼Ó ¹Ş¾Æ¼­ Ç¥½Ã -->
-								¿¬¶ôÃ³ :
+								<!-- ì†Œì† ë°›ì•„ì„œ í‘œì‹œ -->
+								ì—°ë½ì²˜ :
 								<% %>
 							</h4>
-							<!-- ÀüÈ­¹øÈ£ ¹ç¾Æ¼­ Ç¥½ÃÇÒ ºÎºĞ -->
+							<!-- ì „í™”ë²ˆí˜¸ ë°­ì•„ì„œ í‘œì‹œí•  ë¶€ë¶„ -->
 							<div class="wrap-star">
-								<h4>Æò±ÕÁ¡¼ö</h4>
+								<h4>í‰ê· ì ìˆ˜</h4>
 								<div class='star-rating'>
 									<span style="width: 70%"></span>
-									<!-- ÃßÈÄ ½ºÅ©¸³Æ²¸´À¸·Î º°Á¡ Á¤º¸ ¹Ş¾Æ¿Ã ¿¹Á¤ "width:<% %>%"-->
+									<!-- ì¶”í›„ ìŠ¤í¬ë¦½í‹€ë¦¿ìœ¼ë¡œ ë³„ì  ì •ë³´ ë°›ì•„ì˜¬ ì˜ˆì • "width:<% %>%"-->
 								</div>
 							</div>
 						</article>
@@ -173,7 +174,7 @@ geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
 		<!-- Sidebar -->
 		<div id="sidebar">
 			<div class="inner">
-				<!-- Search °Ë»ö±â´É ÀÏ´Ü ¹«½ÃÇÏ±â·Î ÇÕ´Ï´Ù-->
+				<!-- Search ê²€ìƒ‰ê¸°ëŠ¥ ì¼ë‹¨ ë¬´ì‹œí•˜ê¸°ë¡œ í•©ë‹ˆë‹¤-->
 				<!-- <section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
@@ -185,13 +186,13 @@ geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
 						<h2>Menu</h2>
 					</header>
 					<ul>
-						<li><a href="index.html">¸ŞÀÎ</a></li>
-						<li><a href="#">·Î±×ÀÎ</a></li>
-						<!-- ·Î±×ÀÎÆäÀÌÁö ±¸Çö¿¹Á¤ -->
-						<li><a href="#">È¸¿ø°¡ÀÔ</a></li>
-						<!-- È¸¿ø°¡ÀÔÆäÀÌÁö ±¸Çö¿¹Á¤-->
-						<li><a href="#">ÀÌ¿ë³»¿ª</a></li>
-						<!-- ÀÌ¿ë³»¿ª ±¸Çö¿¹Á¤ -->
+						<li><a href="index.html">ë©”ì¸</a></li>
+						<li><a href="#">ë¡œê·¸ì¸</a></li>
+						<!-- ë¡œê·¸ì¸í˜ì´ì§€ êµ¬í˜„ì˜ˆì • -->
+						<li><a href="#">íšŒì›ê°€ì…</a></li>
+						<!-- íšŒì›ê°€ì…í˜ì´ì§€ êµ¬í˜„ì˜ˆì •-->
+						<li><a href="#">ì´ìš©ë‚´ì—­</a></li>
+						<!-- ì´ìš©ë‚´ì—­ êµ¬í˜„ì˜ˆì • -->
 						<!-- <li>
 											<span class="opener">Submenu</span>
 											<ul>
@@ -199,7 +200,7 @@ geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
 												<li><a href="#">Ipsum Adipiscing</a></li>
 												<li><a href="#">Tempus Magna</a></li>
 												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul> Âü°í¿ëÀ¸·Î ³²°ÜµÒ-->
+											</ul> ì°¸ê³ ìš©ìœ¼ë¡œ ë‚¨ê²¨ë‘ -->
 					</ul>
 				</nav>
 				<!-- Section -->
@@ -207,12 +208,12 @@ geocoder.addressSearch('ºÏ±¸ ¼³Á×·Î 214¹ø±æ 100-4', function(result, status) {
 					<header class="major">
 						<h2>Get in touch</h2>
 					</header>
-					<p>¹®Á¦ ¹ß»ı½Ã ´ÙÀ½ ¿¬¶ôÃ³·Î ¿¬¶ô ¹Ù¶ø´Ï´Ù.</p>
+					<p>ë¬¸ì œ ë°œìƒì‹œ ë‹¤ìŒ ì—°ë½ì²˜ë¡œ ì—°ë½ ë°”ëë‹ˆë‹¤.</p>
 					<ul class="contact">
 						<li class="icon solid fa-envelope"><a href="#">genie141930@gmail.com</a></li>
 						<li class="icon solid fa-phone">(010) 5091-0984</li>
-						<li class="icon solid fa-home">±¤ÁÖ±¤¿ª½Ã ºÏ±¸ ¿ëºÀµ¿ 77<br /> Àü³²´ëÇĞ±³
-							»ıÈ°°ü 9Aµ¿
+						<li class="icon solid fa-home">ê´‘ì£¼ê´‘ì—­ì‹œ ë¶êµ¬ ìš©ë´‰ë™ 77<br /> ì „ë‚¨ëŒ€í•™êµ
+							ìƒí™œê´€ 9Aë™
 						</li>
 					</ul>
 				</section>
