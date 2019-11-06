@@ -28,7 +28,7 @@
 
 *변수이름은 ()안에 있어요~
 
-필요한 데이터: 화면에 보여주기 위해 로그인한 드라이버 사용자의  드라이버 이름(D_NAME)이랑 드라이버사진(PHOTO)이 필요
+필요한 데이터: 화면에 보여주기 위해 로그인한 드라이버 사용자의  드라이버 이름(D_NAME)이랑  업체 번호(D_NAME) 드라이버사진(PHOTO)가 필요
 
 -->
 		<!-- Wrapper -->
@@ -40,7 +40,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong> <%=D_NAME%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
+									<a class="logo"><strong> <%=D_NAME%>업체 소속 <%=D_NAME%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
 					
 								</header>
 
@@ -54,6 +54,24 @@
 								<!--여기에 드라이버 사진을  넣어야 하는데 못했습니다.-->
 								
 								</section>
+
+                                 <form action="#" method="post">
+
+														<ul class="actions">
+														<!--href로 매출페이지와 리뷰페이지를 연결-->
+															<li><a href="#"><input type="button" value="매출"></a> </li><!--매출 페이지 -->
+															<li><a href="#"><input type="button" value="리뷰"></a> </li><!--리뷰 페이지 -->
+														</ul>	
+										
+														</form>		
+
+
+
+
+
+
+
+
 
 							<!-- Section -->
 								

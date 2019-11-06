@@ -20,76 +20,54 @@
 		
 	</head>
 <body class="is-preload">
-<!--일반 사용자의 이용내역 확인페이지 ppt6p
-
-*변수이름은 ()안에 있어요~
-
-필요한 데이터: 로그인한 사용자의 주문 내역(날짜(DATE),드라이버 이름(D_NAME),가게 상호명(B_NAME),주문번호(ORDER_NUM))
+<!--드라이버 환경설정을 위한 테이블입니다.
+번호 및 비밀번호 변경 화면 이동을 위한 테이블  ppt 32p  
 -->
-
-
-<!--1.DB에 데이터 가져오기-->
-<%
-	
-	
-	
-	%> 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
+
 							<!-- Header -->
-								<header id="header">
-									<h2>이용내역</h2>
+							<header id="header">
+									<h2>환경 설정</h2>
 								</header>
-									<!-- Section -->
-										<section>
-											<div class="menu">
-												
-											<% for() {%>
-											<article>																		
-											
-                                      <!--2.for문 사용하여 데이터 가져오기
-                                              (주문테이블에 로그인한 사용자의 아이디의 필드 갯수 만큼 for문 하기) 
-                                      -->
-											
-													<form action="#" method="post">
-														<ul class="actions">
-															<li><%=DATE%> </li>
+							<!-- Banner -->
+							<section>
+											<div class="menu" style="border-bottom: none;">
+												<article>																		
+											<h3>사용자 환경설정 </h3>
+                                  <ul class="actions">
+                                  
+														<li><a href="#">비밀번호 수정 및 변경</a> </li><!--드라이버 비밀번호 수정 및 변경 -->
 														</ul>
-														<ul class="actions">
-															<li><%=D_NAME%> 기사님</li>
-														</ul>
-														<ul class="actions">
-															<li><%=B_NAME %>-<%ORDER_NUM %> </li>
-														</ul>
-									
-													</form>	
-																							
-												 </article>
-													<% } %>
-													
-															<ul class="actions">
-														<!--3.href로 리뷰작성 페이지로 연결하기-->
-															<li><a href="#"><input type="button" value="리뷰작성"></a> </li>
-														</ul>	
 														
-											
-												 
+												<!-- 	<form action="#" method="post">
+													</form>	
+													 -->
+																					
+												 </article>
 											</div>
 										</section>
+
+							<!-- Section -->
 								
-										<section>
-											
-									
 						</div>
 					</div>
 
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
+
+							<!-- Search 검색기능 일단 무시하기로 합니다-->
+								<!-- <section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section> -->
+
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
@@ -101,6 +79,7 @@
 										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
 										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
 										<!-- <li>
+											
 									</ul>
 								</nav>
 								
@@ -132,8 +111,8 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
-		    <script src="assets/js/util.js"></script>
-		    <script src="assets/js/main.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
