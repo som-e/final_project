@@ -99,16 +99,16 @@
 												<article>																		
 													<form action="#" method="post" enctype="multipart/form-data"><!--파일을 보낼 때는 바이너리 코드로 보내야하기 때문에 enc-type속성 지정 -->
 														<ul class="actions">
-															<li><input type="text" name="email" placeholder="ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="d_id" placeholder="ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="password" name="pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="password" name="d_pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="text" name="name" placeholder="이름을 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="d_name" placeholder="이름을 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="text" name="phone_num" placeholder="전화번호를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="d_num" placeholder="전화번호를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="filebox bs3-primary" style="padding-left: 0em;">
 															<input class="upload-name" value="사진선택" disabled="disabled" style="color:#9fa3a6; text-align:center; width:210px; height:50px;">

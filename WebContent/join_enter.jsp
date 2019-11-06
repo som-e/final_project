@@ -19,7 +19,7 @@
 						<div class="inner">
 							<!-- Header -->
 								<header id="header">
-									<h2>고객용 회원가입</h2>
+									<h2>업체용 회원가입</h2>
 								</header>
 									<!-- Section -->
 										<section>
@@ -27,16 +27,19 @@
 												<article>																		
 													<form action="#" method="post">
 														<ul class="actions">
-															<li><input type="text" name="u_id" placeholder="ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="e_id" placeholder="ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="password" name="u_pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="password" name="e_pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="text" name="u_name" placeholder="이름을 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="e_name" placeholder="업체명을 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
-															<li><input type="text" name="u_num" placeholder="전화번호를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+															<li><input type="text" name="e_ceo" placeholder="대표자 이름을 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
+														</ul>
+														<ul class="actions">
+															<li><input type="text" name="e_num" placeholder="대표 전화번호를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
 														</ul>
 														<ul class="actions">
 															<li><input type="submit" value="join us" class="button fit" style="text-align:center; width:150px; height:50px;"></li>
