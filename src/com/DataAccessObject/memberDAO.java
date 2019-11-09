@@ -15,13 +15,14 @@ public class memberDAO {
 		
 		try {
 		 
-		Class.forName("org.mariadb.jdbc.Driver"); 
-		
-		String driver = "jdbc:mariadb://3.133.25.62:3306/project";
-		String userid = "root"; 
-		String userpwd = "";
-		conn = DriverManager.getConnection(driver, userid , userpwd);
-		
+			 String driver = "jdbc:oracle:thin:@192.168.0.22:1521:xe";
+		      String userid = "project"; 
+		      String userpwd = "gozldshsh";
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			
+			
 		if(conn!=null) {
 		System.out.println("connected");
 		}

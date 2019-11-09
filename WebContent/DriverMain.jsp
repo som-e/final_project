@@ -40,7 +40,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong> <%=D_NAME%>업체 소속 <%=D_NAME%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
+									<a class="logo"><strong> <%%>업체 소속 <%%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
 					
 								</header>
 
@@ -59,7 +59,7 @@
 
 														<ul class="actions">
 														<!--href로 매출페이지와 리뷰페이지를 연결-->
-															<li><a href="#"><input type="button" value="매출"></a> </li><!--매출 페이지 -->
+															<li><a href="#"><input type="button" value="점수"></a> </li><!--평가 페이지 -->
 															<li><a href="#"><input type="button" value="리뷰"></a> </li><!--리뷰 페이지 -->
 														</ul>	
 										
