@@ -129,7 +129,7 @@
 														<ul class="filebox bs3-primary" style="padding-left: 0em;">
 															<input class="upload-name" value="사진선택" disabled="disabled" style="color:#9fa3a6; text-align:center; width:210px; height:50px;">
                            									<label for="ex_filename" style="text-align:center; width:100px; height:50px; line-height: 50px;">UPLOAD</label> 
-                         									<input type="file" id="ex_filename" class="upload-hidden"> 
+                         									<input type="file" id="ex_filename" class="upload-hidden" name="photo">
 														</ul>
 														<ul class="actions">
 															<li><input type="submit" value="join us" class="button fit" style="text-align:center; width:150px; height:50px;"></li>

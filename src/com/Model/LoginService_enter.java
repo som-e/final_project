@@ -34,7 +34,7 @@ public class LoginService_enter implements com.Interface.Command {
 				//JSP는 내장객체로 session이 존재하지만
 				//Servlet은 내장객체가 없음으로 session객체를 생성해줘야함
 				session.setAttribute("e_do", e_do);		
-				nextpage = "index.jsp";
+				nextpage = "DriverManagement.jsp";
 				
 			}else {
 				System.out.println("로그인실패");

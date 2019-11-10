@@ -1,3 +1,5 @@
+<%@page import="com.DataObject.enterpriseDO"%>
+<%@page import="com.DataObject.driverDO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -31,6 +33,10 @@
 필요한 데이터: 화면에 보여주기 위해 로그인한 드라이버 사용자의  드라이버 이름(D_NAME)이랑  업체 번호(D_NAME) 드라이버사진(PHOTO)가 필요
 
 -->
+	<%	
+	driverDO d_do = (driverDO)session.getAttribute("d_do");
+	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do"); 
+	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -96,7 +102,11 @@
 									</header>
 									<ul>
 										<li><a href="index.html">메인</a></li>
-										<li><a href="#">로그인</a></li><!-- 로그인페이지 구현예정 -->
+										<%if((d_do==null)&&(e_do==null)){ %>
+										<li><a href="login.jsp">로그인</a></li>
+										<%}else{%>
+										<li><a href="logoutCon_driver.do">로그아웃</a></li>
+										<%} %>
 										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
 										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
 										<!-- <li>

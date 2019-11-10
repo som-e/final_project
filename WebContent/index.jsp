@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<%@page import="com.DataAccessObject.memberDAO"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -59,7 +60,6 @@
 		
 	</head>
 <body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -72,16 +72,15 @@
 								</header>
 											<div class="login_menu">
 												<article>
+
+													    <input id="tab1" type="radio" name="tabs" checked>
+													    <label for="tab1">드라이버 로그인</label>
 													
-													    <input id="tab2" type="radio" name="tabs" checked>
-													    <label for="tab2">드라이버 로그인</label>
+													    <input id="tab2" type="radio" name="tabs">
+													    <label for="tab2">업체 로그인</label>
+													    
+													    <section id="content1">
 													
-													    <input id="tab3" type="radio" name="tabs">
-													    <label for="tab3">업체 로그인</label>
-													
-													  
-													
-													    <section id="content2">
 													        <form action="login_driver.do" method="post">
 																<ul class="actions">
 																	<li><input type="text" name="d_id" placeholder="D_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
@@ -95,7 +94,7 @@
 															</form>
 													    </section>
 													
-													    <section id="content3">
+													    <section id="content2">
 													        <form action="login_enter.do" method="post">
 																<ul class="actions">
 																	<li><input type="text" name="e_id" placeholder="E_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>

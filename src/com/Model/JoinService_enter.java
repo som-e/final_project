@@ -33,7 +33,7 @@ public class JoinService_enter implements Command {
 		
 		if(cnt>0) {
 			request.setAttribute("e_do", e_do);
-			nextpage="login.jsp";
+			nextpage="index.jsp";
 			
 			
 		//	response.sendRedirect("main.jsp");
