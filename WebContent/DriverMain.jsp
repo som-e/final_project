@@ -11,9 +11,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
-		.star-rating { width:205px; }
-		.star-rating,.star-rating span { display:inline-block; height:39px; overflow:hidden; background:url(star.png)no-repeat; }
-		.star-rating span{ text-align: center; }
 		img{
 		border: 3px solid red:
 		width:100px:
@@ -66,7 +63,7 @@
 														<ul class="actions">
 														<!--href로 매출페이지와 리뷰페이지를 연결-->
 															<li><a href="#"><input type="button" value="점수"></a> </li><!--평가 페이지 -->
-															<li><a href="#"><input type="button" value="리뷰"></a> </li><!--리뷰 페이지 -->
+															<li><a href="review_drivers_view.jsp"><input type="button" value="리뷰"></a> </li><!--리뷰 페이지 -->
 														</ul>	
 										
 														</form>		
@@ -101,14 +98,12 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">메인</a></li>
+										<li><a href="DriverMain.jsp">메인</a></li>
 										<%if((d_do==null)&&(e_do==null)){ %>
 										<li><a href="login.jsp">로그인</a></li>
 										<%}else{%>
 										<li><a href="logoutCon_driver.do">로그아웃</a></li>
 										<%} %>
-										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
-										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
 										<!-- <li>
 											
 									</ul>

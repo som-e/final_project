@@ -93,10 +93,10 @@ table, tr, th, td{vertical-align: bottom;}
 											<!--class="image"><img src=""width="100" height="120" alt="프로필"> 기사님사진 받을 곳 -->
 											<%//}%>
 										</td>
-										<td><%d_name %>기사님</td><!-- 기사님 성함을 받아와 표시할 곳 -->
+										<td><%// d_name %>기사님</td><!-- 기사님 성함을 받아와 표시할 곳 -->
 									</tr>
 									<tr>
-										<td>날짜 : <%d_date %></td><!-- 날짜 받아와 표시 -->
+										<td>날짜 : <%//d_date %></td><!-- 날짜 받아와 표시 -->
 									</tr>	
 									<tr style="background-color: transparent;">
 										<td colspan="2">

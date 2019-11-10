@@ -6,12 +6,12 @@ public class reviewDO {
 	private String u_id;
 	private int order_num;
 	private int r_date;
-	private float star_rate;
+	private int star_rate;
 	private String post;
 	
 	
 	
-	public reviewDO(int post_num, String u_id, int order_num, int r_date, float star_rate, String post) {
+	public reviewDO(int post_num, String u_id, int order_num, int r_date, int star_rate, String post) {
 		super();
 		this.post_num = post_num;
 		this.u_id = u_id;
@@ -22,7 +22,7 @@ public class reviewDO {
 	}
 	
 	
-	public reviewDO(String u_id, int order_num, int r_date, float star_rate, String post) {
+	public reviewDO(String u_id, int order_num, int r_date, int star_rate, String post) {
 		this.u_id = u_id;
 		this.order_num = order_num;
 		this.r_date = r_date;
@@ -31,7 +31,7 @@ public class reviewDO {
 	}
 
 
-	public reviewDO(float star_rate, String post) {
+	public reviewDO(int star_rate, String post) {
 		this.star_rate = star_rate;
 		this.post = post;
 	}
@@ -61,10 +61,10 @@ public class reviewDO {
 	public void setR_date(int r_date) {
 		this.r_date = r_date;
 	}
-	public float getStar_rate() {
+	public int getStar_rate() {
 		return star_rate;
 	}
-	public void setStar_rate(float star_rate) {
+	public void setStar_rate(int star_rate) {
 		this.star_rate = star_rate;
 	}
 	public String getPost() {
