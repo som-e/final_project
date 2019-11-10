@@ -215,6 +215,31 @@ return answer;
 		return d_do;
 	}
 
+	//10초 단위로 gps 를 생성한다. 
+	
+    public static void sendGPS(String gps , String d_id) {
+    	
+    	try {
+			getConnection();
+
+			String sql="update location set rt_location = ? where d_id = ? and order_num = 1000";
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, gps);
+			psmt.setString(2, d_id);
+    	
+    	
+			int cnt = psmt.executeUpdate(sql); 
+			if(cnt >0) System.out.println("gps ok");
+    	
+    } catch(Exception e) {
+    	
+    	e.printStackTrace();
+    }
+	
+   }
+	
+    
 	public enterpriseDO Login_enter(String e_id, String e_pw) {
 		enterpriseDO e_do = null; 
 		

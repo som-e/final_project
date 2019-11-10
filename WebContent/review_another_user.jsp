@@ -56,7 +56,7 @@ margin-right: auto;}
 				<div class="inner">
 					<!-- Header -->
 						<header id="header">
-							<h2>¥Ÿ∏• ∞Ì∞¥≥øµÈ¿« ∏Æ∫‰</h2>
+							<h2>¥Ÿ∏• ∞Ì∞¥¥‘µÈ¿« ∏Æ∫‰</h2>
 						</header>
 							<!-- Section -->
 								<section>
