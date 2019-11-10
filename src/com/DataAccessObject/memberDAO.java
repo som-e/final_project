@@ -3,8 +3,11 @@ package com.DataAccessObject;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.websocket.Session;
+
 import com.DataObject.UserUsageDO;
 import com.DataObject.driverDO;
+import com.DataObject.enter_main_viewerDO;
 import com.DataObject.reviewDO; 
 import com.DataObject.enterpriseDO;
 import com.DataObject.orderDO;
@@ -340,10 +343,61 @@ return answer;
 		
 		return en_arr;
 	}
-	
 
+	public ArrayList<enter_main_viewerDO> enter_main(String e_id) { // 텍스트 마이닝 정보 없음 추후 추가 예정
+		System.out.println(e_id);
+		enter_main_viewerDO emv_do = null;
+		ArrayList<enter_main_viewerDO> emv_arr = new ArrayList<>();
+		
+		try {
+			getConnection();
+			
+			String sql = "select e.d_name, e.d_p_number, r.star_avg, e.photo from reliability r right outer join (select d_id, d_name, d_p_number, photo from driver where e_id = ?) e on e.d_id = r.d_id";
+			//텍스트 마이닝 정보 없음
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, e_id);
+			
+			ResultSet rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				String d_name = rs.getString(1);
+				String d_num = rs.getString(2);
+				String star_avg = rs.getString(3);
+				String photo = rs.getString(4);
+				
+				emv_do = new enter_main_viewerDO(d_name, d_num, star_avg, photo, null); 
+				emv_arr.add(emv_do);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return emv_arr;
+		
+	}
 
-		public int reviewInsert(reviewDO vo) {
+	public int star_avg(String e_id) {
+		ArrayList<enter_main_viewerDO> emv_arr = enter_main(e_id);
+		
+		int star =0;
+		int n=0;
+		for(int i=0;i<emv_arr.size();i++){
+			if(emv_arr.get(i).getStar_rate()!=null){
+				star+=Integer.parseInt(emv_arr.get(n).getStar_rate());
+				n++;
+			}
+		}
+		if(star==0) {
+			return 0;
+		}else {
+			return star/=n;
+		}
+	}
+
+	public int reviewInsert(reviewDO vo) {
 		int cnt = 0;
 		
 		try {
@@ -438,6 +492,7 @@ public ArrayList<reviewDO> driverMyReview() {
 	return arr;
 }
 
+// 보류 합니다.
 public ArrayList<driverDO> driverManagement() {
 	driverDO vo = null;
 	ArrayList<driverDO> arr = new ArrayList<>();
