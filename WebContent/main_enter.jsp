@@ -1,5 +1,8 @@
 <%@page import="com.DataObject.enterpriseDO"%>
 <%@page import="com.DataObject.driverDO"%>
+<%@page import="com.DataObject.enter_main_viewerDO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DataAccessObject.memberDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
@@ -64,7 +67,11 @@ table, tr, th, td{vertical-align: bottom;}
 <body class="is-preload" onload='recall()'>
 	<%
 	driverDO d_do = (driverDO)session.getAttribute("d_do");
-	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do"); 
+	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do");
+	String e_id = e_do.getE_id();
+	memberDAO dao = new memberDAO();
+	ArrayList<enter_main_viewerDO> emv_arr = dao.enter_main(e_id);
+	int star = dao.star_avg(e_id);
 	%>
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -75,17 +82,16 @@ table, tr, th, td{vertical-align: bottom;}
 
 				<!-- Header -->
 				<header id="header">
-					<a class="logo"><strong><% %> 업체명 표시 예정</strong></a><!-- 업체명표시 -->
+					<a class="logo"><strong><%=e_do.getE_name() %></strong></a><!-- 업체명표시 -->
 				</header>
 
 				<!-- Banner -->
 				<section id="banner">
 					<div class="content">
-						<div style="border: 2px solid #f56a6a; background-color:transparent; padding:5px; border-radius: 0.375em;">
+						<div style=" background-color:transparent; padding:5px; border-bottom: 2px solid #f56a6a;;">
 							<b style="font-size:40px;">평균별점&nbsp&nbsp</b>
 							<div class='star-rating'>
-								<span style="width: 70%"></span>
-								<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
+								<span style="width: <%=star %>%"></span>
 							</div>										
 						</div>
 					</div>
@@ -96,48 +102,56 @@ table, tr, th, td{vertical-align: bottom;}
 						<article>																		
 		                	<form action="#" method="post">
 		                    	<table style="border-collapse: inherit;">
+			                	<%for(int i=0; i<emv_arr.size(); i++){%>
 									<tr style="background-color: transparent; ">
 										<td rowspan="3" width="100" height="120"><!-- 가능하면 사진의 크기와 동일하게 설정-->
-											<%//if(profile==null){ %>
+											<%if(emv_arr.get(i).getPhoto()==null){ %>
 											<!-- DB에서 사진을 받아와 표시, null값 일경우 디폴트 프로필 표시 -->
 											<span class="image"><img src="images/profile.png" width="100" height="120" alt="프로필"></span>
-											<%//}else{%>
-											<!--class="image"><img src=""width="100" height="120" alt="프로필"> 기사님사진 받을 곳 -->
-											<%//}%>
+											<%}else{%>
+											<span class="image"><img src="images/<%=emv_arr.get(i).getPhoto() %>"width="100" height="120" alt="프로필"></span>
+											<%}%>
 										</td>
-										<td><% %>&nbsp기사님</td><!-- 기사님 성함을 받아와 표시할 곳 -->
+										<td><%=emv_arr.get(i).getD_name() %>&nbsp기사님</td><!-- 기사님 성함을 받아와 표시할 곳 -->
 										<td><input type="submit" value="수정" class="button fit" style="width:inherit;"></td>
 									</tr>
 									<tr>
 										<td>
-											번호&nbsp <% %>
+											번호&nbsp <%=emv_arr.get(i).getD_num() %>
 										</td>
 										<td><a href="#" class="button">삭제</a></td>
 									</tr>
 									<tr style="background-color: transparent; ">
 										<td>
 											별점&nbsp
+											<%if(emv_arr.get(i).getStar_rate()==null){ %>
+											아직 평가가 없어요!
+											<%}else{ %>
 											<div class='star-rating_s'>
-												<span style="width: 80%"></span>
-												<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
+												<span style="width: <%=emv_arr.get(i).getStar_rate() %>%"></span>
 											</div>
+											<%} %>
 										</td>
 										<td>
-											<a href="javascript:doDisplay(1);" class="button primary">더보기</a><br/><br/>
+											<a href="javascript:doDisplay(<%=i %>);" class="button primary">더보기</a><br/><br/>
 										</td>
 									</tr>
 									<tr>
 										<td colspan="3">
-											<div id="myDIV1" style="display: none;">
+											<div id="myDIV<%=i %>" style="display: none;">
 												<div style="border: 2px solid #f56a6a; background-color:transparent; padding:20px; border-radius: 0.375em; text-align:center">
-													<% %>텍스트마이닝 받아서 표시 예정
+													<%if(emv_arr.get(i).getTxt_m()==null){ %>
+														아직 평가가 없어요!
+													<%}else{ %>
+														<%=emv_arr.get(i).getTxt_m() %>
+													<%} %>
 												</div>
 											</div>
 										</td>
 									</tr>
+								<%} %>	
 								</table>
 							</form>
-							<% %>
 						</article>
 					</div>
 				</section>
