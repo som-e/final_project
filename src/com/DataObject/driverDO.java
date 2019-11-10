@@ -18,14 +18,14 @@ public class driverDO {
 	}
 
 
-	public driverDO(String d_name, String d_num, String e_id, String photo) {
+/*	public driverDO(String d_name, String d_num, String e_id, String photo) {
 		super();
 		this.d_name = d_name;
 		this.d_num = d_num;
 		this.e_id = e_id;
 		this.photo = photo;
 	}
-
+*/
 
 
 	public driverDO(String d_id, String d_pw, String d_name, String d_num, String e_id, String photo) {

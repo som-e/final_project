@@ -11,7 +11,6 @@ import com.DataObject.userDO;
 
 public class memberDAO {
 	
-	 
     static Connection conn = null; 
 	static PreparedStatement psmt = null;
 	static ResultSet rs = null; 
@@ -24,14 +23,14 @@ public class memberDAO {
 		try {
 		   Class.forName("oracle.jdbc.driver.OracleDriver"); 
 			      
-			 String driver = "jdbc:oracle:thin:@192.168.0.22:1521:xe";
+			 String driver = "jdbc:oracle:thin:@localhost:1521:xe";
 			      String userid = "project"; 
 			      String userpwd = "gozldshsh";
 			
 		conn = DriverManager.getConnection(driver, userid , userpwd);
 		
 		if(conn!=null) {
-		System.out.println("connected");
+		System.out.println("connected는 오지게 잘되네 ㅡ 와 세상에 젠장 db 올리고 commit 은 필수구나");
 		}
 		
 		else {
@@ -43,37 +42,69 @@ public class memberDAO {
 	}
 	
 }
-
-	public static void check_db() {  //just check whether this DB is working well 
-
-	try {
-		
-		getConnection(); 
-		
-		String sql="select * from user";
-		
-		psmt = conn.prepareStatement(sql);
-		String test = ""; 
-		
-		ResultSet rs = psmt.executeQuery();
 	
-				while(rs.next()) {
-			
-				test = rs.getString(1);  //user 
-					 
-					}	
-				
-				System.out.println(test);
-				
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-			}
-			
-			
-			
-		}
+	//점포명을 가져온다  commit 은 필수... 
+	public static String getBusiness(int b_num) {
 
+		String bname = ""; 
+		try {
+			
+			getConnection();
+			
+			String sql = "select * from business where b_num = ?"; 
+			
+			PreparedStatement psmt = conn.prepareStatement(sql); 
+			psmt.setInt(1, b_num);
+			
+			ResultSet rs = psmt.executeQuery(); 
+			
+			if(rs.next()) {
+				
+				bname = rs.getString(2); 
+			
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	
+		return bname; 
+	}
+	
+	
+	public static String getDriver(String u_id , int b_num) {
+		String answer = ""; 
+
+try {
+			
+			getConnection();
+			
+			String sql =  "select * from driver where d_id = (select d_id from order_t where u_id = ? and b_num=?)";
+			
+			PreparedStatement psmt = conn.prepareStatement(sql); 
+			psmt.setString(1, u_id);
+			psmt.setInt(2 , b_num); 
+			
+			ResultSet rs = psmt.executeQuery(); 
+			
+			if(rs.next()) {
+				
+				answer = rs.getString(3) + "&";
+				answer = answer + rs.getString(4) + "&";   //별점은 나중에 .
+			    answer = answer + rs.getString(5); 
+				System.out.println(answer);
+				
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+return answer; 
+		
+		
+	}
+	
+	
+	
+	
 	public userDO Login(String u_id, String u_pw) {
 		userDO u_do = null;
 		
@@ -274,7 +305,7 @@ public class memberDAO {
 		return en_arr;
 	}
 	
-}
+
 
 		public int reviewInsert(reviewDO vo) {
 		int cnt = 0;
@@ -327,7 +358,7 @@ public ArrayList<reviewDO> userMyReview() {
 			String r_date = rs.getString("R_DATE");
 			String post = rs.getString("POST");
 			
-			vo = new reviewDO(post_num, photo, d_name, r_date, post);
+		//	vo = new reviewDO(post_num, photo, d_name, r_date, post);
 			//DO는 어떻게?
 			arr.add(vo);
 			
@@ -404,4 +435,5 @@ public ArrayList<driverDO> driverManagement() {
 	return arr;
 }
 
+	
 }
