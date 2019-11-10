@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<%@page import="com.DataAccessObject.memberDAO"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -59,7 +60,6 @@
 		
 	</head>
 <body class="is-preload">
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -72,30 +72,13 @@
 								</header>
 											<div class="login_menu">
 												<article>
-													    <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
-													    <label for="tab1">사용자 로그인</label>
+													    <input id="tab1" type="radio" name="tabs" checked>
+													    <label for="tab1">드라이버 로그인</label>
 													
 													    <input id="tab2" type="radio" name="tabs">
-													    <label for="tab2">드라이버 로그인</label>
-													
-													    <input id="tab3" type="radio" name="tabs">
-													    <label for="tab3">업체 로그인</label>
-													
+													    <label for="tab2">업체 로그인</label>
+													    
 													    <section id="content1">
-													        <form action="login.do" method="post">
-																<ul class="actions">
-																	<li><input type="text" name="u_id" placeholder="U_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-																<ul class="actions">
-																	<li><input type="password" name="u_pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-																<ul class="actions">
-																	<li><input type="submit" value="login" class="button fit" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-															</form>
-													    </section>
-													
-													    <section id="content2">
 													        <form action="login_driver.do" method="post">
 																<ul class="actions">
 																	<li><input type="text" name="d_id" placeholder="D_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
@@ -109,7 +92,7 @@
 															</form>
 													    </section>
 													
-													    <section id="content3">
+													    <section id="content2">
 													        <form action="login_enter.do" method="post">
 																<ul class="actions">
 																	<li><input type="text" name="e_id" placeholder="E_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
@@ -145,7 +128,6 @@
 									</header>
 									<ul>
 										<li><a href="index.jsp">메인</a></li>
-										<li><a href="login.jsp">로그인</a></li>
 										<li><a href="User_usageDetails.jsp">이용내역</a></li>
 										<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
 										<li><a href="#">환경설정</a></li>

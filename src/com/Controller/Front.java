@@ -15,6 +15,8 @@ import com.Model.JoinService_enter;
 import com.Model.LoginService;
 import com.Model.LoginService_driver;
 import com.Model.LoginService_enter;
+import com.Model.LogoutSurvice_driver;
+import com.Model.LogoutSurvice_enter;
 
 /**
  * Servlet implementation class front
@@ -38,7 +40,6 @@ public class Front extends HttpServlet {
 		
 		String nextpage = "";
 		
-		memberDAO.check_db(); 
 		
 		if (front.equals("login.do")) {
 				LoginService login = new LoginService();
@@ -58,8 +59,13 @@ public class Front extends HttpServlet {
 		}else if(front.equals("Join_enter.do")) {
 			JoinService_enter join = new JoinService_enter();
 			nextpage = join.execute(request, response);
+		}else if(front.equals("LogoutCon_driver.do")) {
+			LogoutSurvice_driver logout = new LogoutSurvice_driver();
+			nextpage = logout.execute(request, response);
+		}else if(front.equals("LogoutCon_enter.do")) {
+			LogoutSurvice_enter logout = new LogoutSurvice_enter();
+			nextpage = logout.execute(request, response);
 		}
-		
 	
 		RequestDispatcher dis = request.getRequestDispatcher(nextpage);
 		dis.forward(request, response);	

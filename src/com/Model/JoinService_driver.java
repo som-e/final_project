@@ -20,7 +20,7 @@ public class JoinService_driver implements Command {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String saveDirectory = "C:\\Users\\Genie\\Desktop\\workspace\\final_project\\WebContent\\profile";
+		String saveDirectory = "C:\\Users\\Genie\\Desktop\\workspace\\final_project\\WebContent\\images";
 		int maxPostSize = 5*1024*1024;
 		String encoding = "utf-8";
 		
@@ -39,6 +39,8 @@ public class JoinService_driver implements Command {
 		String e_id = multi.getParameter("e_id");
 		String photo = multi.getFilesystemName("photo");
 		
+		System.out.println(photo);
+		
 		driverDO d_do = new driverDO(d_id, d_pw, d_name, d_num, e_id, photo);
 		memberDAO dao = new memberDAO();
 		
@@ -49,7 +51,7 @@ public class JoinService_driver implements Command {
 		
 		if(cnt>0) {
 			request.setAttribute("d_do", d_do);
-			nextpage="login.jsp";
+			nextpage="index.jsp";
 			
 			
 		}else {

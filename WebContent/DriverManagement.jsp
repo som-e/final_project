@@ -1,3 +1,5 @@
+<%@page import="com.DataObject.enterpriseDO"%>
+<%@page import="com.DataObject.driverDO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -29,9 +31,8 @@
 
 <!--1.DB에 데이터 가져오기-->
 <%
-	
-	
-	
+	driverDO d_do = (driverDO)session.getAttribute("d_do");
+	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do"); 
 	%> 
 <!-- Wrapper -->
 	<div id="wrapper">
@@ -91,7 +92,11 @@
 									</header>
 									<ul>
 										<li><a href="index.html">메인</a></li>
-										<li><a href="#">로그인</a></li><!-- 로그인페이지 구현예정 -->
+										<%if((d_do==null)&&(e_do==null)){ %>
+										<li><a href="index.jsp">로그인</a></li>
+										<%}else{%>
+										<li><a href="logoutCon_enter.do">로그아웃</a></li>
+										<%} %>
 										<li><a href="#">회원가입</a></li><!-- 회원가입페이지 구현예정-->
 										<li><a href="#">이용내역</a></li><!-- 이용내역 구현예정 -->
 										<!-- <li>
