@@ -72,6 +72,7 @@
 								</header>
 											<div class="login_menu">
 												<article>
+
 													    <input id="tab1" type="radio" name="tabs" checked>
 													    <label for="tab1">드라이버 로그인</label>
 													
@@ -79,6 +80,7 @@
 													    <label for="tab2">업체 로그인</label>
 													    
 													    <section id="content1">
+													
 													        <form action="login_driver.do" method="post">
 																<ul class="actions">
 																	<li><input type="text" name="d_id" placeholder="D_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
@@ -110,7 +112,6 @@
 								
 										<h4>아직도 회원이 아니신가요?</h4>
 										<ul class="actions">
-											<li><a href="join_user.jsp" class="button">고객용</a></li> <!-- 고객용 회원가입페이지로이동 -->
 											<li><a href="join_driver.jsp" class="button">드라이버용</a></li> <!-- 드라이버용 회원가입페이지로이동 -->
 											<li><a href="join_enter.jsp" class="button">업체용</a></li> <!-- 업체용 회원가입페이지로이동 -->
 										</ul>
@@ -128,10 +129,7 @@
 									</header>
 									<ul>
 										<li><a href="index.jsp">메인</a></li>
-										<li><a href="User_usageDetails.jsp">이용내역</a></li>
-										<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
-										<li><a href="#">환경설정</a></li>
-										<!-- 환경설정 구현예정 -->
+										<li><a href="login.jsp">로그인</a></li>
 										<!-- <li>
 											<span class="opener">Submenu</span>
 											<ul>

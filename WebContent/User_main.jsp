@@ -2,6 +2,7 @@
 <%@page import="com.DataObject.driverDO"%>
 <%@page import="com.DataObject.userDO"%>
 <%@page import="com.DataAccessObject.memberDAO"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
@@ -42,15 +43,17 @@ table, tr, th, td{vertical-align: bottom;}
 <body class="is-preload" onload='recall()'>
 
 <% 
+
 String u_id = "1"; //아이디를 받아왔다고 가정 
 int b_num = 1;   //교촌치킨을 받아왔다고 가정
-
 
 String bname =memberDAO.getBusiness(b_num); 
 
 String orderName = memberDAO.getDriver(u_id , b_num); 
 
 String arr[] = orderName.split("&"); 
+
+int star_avg = memberDAO.getStar(arr[0]); 
 
 /* 
 System.out.println(arr[0]);
@@ -230,7 +233,8 @@ registration.showNotification(title, options);
 					<header class="major">
 
 						<a href="review_another_user.jsp" style="color:black; font-size:20px">
-							<%= arr[0]%> 기사님
+							
+							<%= arr[1]%> 기사님
 						</a>
 						<!-- 기사님 성함을 받아와 표시할 곳 -->
 					</header>
@@ -246,10 +250,10 @@ registration.showNotification(title, options);
 											<!--class="image"><img src=""width="100" height="120" alt="프로필"> 기사님사진 받을 곳 -->
 										<%//}%>
 									</td>
-									<td>소속 : <%= arr[2]%></td><!-- 기사님 소속을 받아와 표시할 곳 -->
+									<td>소속 : <%= arr[3]%></td><!-- 기사님 소속을 받아와 표시할 곳 -->
 								</tr>
 								<tr>
-									<td>연락처 : <%= arr[1] %></td>
+									<td>연락처 : <%= arr[2] %></td>
 								</tr>
 								<tr style="background-color: transparent; ">
 									<td colspan="2">
@@ -257,8 +261,9 @@ registration.showNotification(title, options);
 											평균점수
 											<br>
 											<div class='star-rating'>
-												<span style="width: 70%"></span>
-												<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
+											<% System.out.println(star_avg); %>
+												<span style="width: <%=star_avg%>%"></span>
+												<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:%"-->
 											</div>
 										</div>
 									</td>
@@ -289,13 +294,9 @@ registration.showNotification(title, options);
 					<ul>
 
 						<li><a href="index.jsp">메인</a></li>
-						<%if((u_do==null)&&(d_do==null)&&(e_do==null)){ %> <!-- 로그인 시 로그인창 숨기기 -->
-						<li><a href="login.jsp">로그인</a></li><!-- 추후 로그인이 되어있을 경우 제거 혹은 로그아웃으로 변경 -->
-						<%}%>
-						<li><a href="User_usageDetails.jsp">이용내역</a></li>
+						<li><a href="User_usageDetails.jsp?u_id=<%= u_id %>" >이용내역</a></li>
 						<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
-						<li><a href="#">환경설정</a></li>
-						<!-- 환경설정 구현예정 -->
+						<!-- 환경설정 구현 안함-->
 
 						<!-- <li>
 											<span class="opener">Submenu</span>
