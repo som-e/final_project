@@ -133,7 +133,7 @@ table, tr, th, td{vertical-align: bottom;}
 											<%} %>
 										</td>
 										<td>
-											<a href="javascript:doDisplay(<%=i %>);" class="button primary">더보기</a><br/><br/>
+											<a href="javascript:doDisplay(<%=i %>);" class="button primary">Touch</a><br/><br/>
 										</td>
 									</tr>
 									<tr>

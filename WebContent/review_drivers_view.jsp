@@ -1,3 +1,8 @@
+<%@page import="com.DataObject.reviewDO"%>
+<%@page import="com.DataObject.enterpriseDO"%>
+<%@page import="com.DataObject.driverDO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DataAccessObject.memberDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -28,21 +33,14 @@
 		
 	</head>
 <body class="is-preload">
-<!--업체가 드라이버를 관리(사원리스트 보기와 수정 삭제하기)하기 위한 페이지  ppt 21p
-
-*변수이름은 ()안에 있어요~
-
-필요한 데이터: 업체에 있는 드라이버(드라이버 이름(D_NAME),드라이버 사진(PHOTO))
-
--->
-
-
 <!--1.DB에 데이터 가져오기-->
 <%
-	
-	
-	
-	%> 
+	driverDO d_do = (driverDO)session.getAttribute("d_do");	
+	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do"); 
+	String d_id = d_do.getD_id();
+	memberDAO dao = new memberDAO();
+	ArrayList<reviewDO> r_arr = dao.get_review_driver(d_id);
+%> 
 <!-- Wrapper -->
 	<div id="wrapper">
 
@@ -58,21 +56,30 @@
 									<div class="menu">
 										<article>																												
 		                                   <table>
-		                                   		<% %><!-- 반복문으로 받아와 표시 -->
+		                                   		<%if(r_arr.size()==0){ %>
 		                                   		<tr>
-		                                   			<td style="width: 150px;">
-		                                   				<div class='star-rating'>
-															<span style="width: 70%"></span>
-															<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:<% %>%"-->
-														</div>
-		                                   			</td>
 		                                   			<td>
-		                                   				<div style="border: 2px solid #f56a6a; background-color:transparent; padding:20px; border-radius: 0.375em; text-align:center">
-															<% %>리뷰 받아서 표시 예정
+			                                   			<div style="border: 2px solid #f56a6a; background-color:transparent; padding:20px; border-radius: 0.375em; text-align:center">
+															아직 리뷰가 없어요!
 														</div>
-		                                   			</td>
+			                                   		</td>
 		                                   		</tr>
-		                                   		<% %>
+		                                   		<%}else{ %>
+			                                   	<%for(int i=0; i<r_arr.size(); i++){%>
+			                                   	<tr>
+			                                   		<td style="width: 150px;">
+			                                   			<div class='star-rating'>
+															<span style="width: <%=r_arr.get(i).getStar_rate() %>%"></span>
+														</div>
+			                                   		</td>
+			                                   		<td>
+			                                   			<div style="border: 2px solid #f56a6a; background-color:transparent; padding:20px; border-radius: 0.375em; text-align:center">
+															<%=r_arr.get(i).getPost() %>
+														</div>
+			                                   		</td>
+			                                   	</tr>
+			                                   	<%} %>
+											<%} %>
 		                                   </table>
 										</article>
 									</div>
@@ -90,12 +97,12 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.jsp">메인</a></li>
+										<li><a href="DriverMain.jsp">메인</a></li>
+										<%if((d_do==null)&&(e_do==null)){ %>
 										<li><a href="login.jsp">로그인</a></li>
-										<li><a href="User_usageDetails.jsp">이용내역</a></li>
-										<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
-										<li><a href="#">환경설정</a></li>
-										<!-- 환경설정 구현예정 -->
+										<%}else{%>
+										<li><a href="logoutCon_driver.do">로그아웃</a></li>
+										<%} %>
 										<!-- <li>
 									</ul>
 								</nav>

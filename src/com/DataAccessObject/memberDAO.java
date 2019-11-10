@@ -448,8 +448,39 @@ return answer;
 		return cnt;
 	} 
 	
+	public ArrayList<reviewDO> get_review_driver(String d_id) {
+		System.out.println(d_id);
+		reviewDO r_do = null;
+		ArrayList<reviewDO> r_arr = new ArrayList<>();
+		
+		try {
+			getConnection();
+			
+			String sql = "select star_rate, post from review where order_num in (select order_num from order_t where d_id = ?)";
+			//텍스트 마이닝 정보 없음
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, d_id);
+			
+			ResultSet rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int star_rate = rs.getInt(1);
+				String post = rs.getString(2);
+				
+				r_do = new reviewDO(star_rate, post); 
+				r_arr.add(r_do);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return r_arr;
+	}
 
-
+	
 public ArrayList<reviewDO> userMyReview() {
 	reviewDO vo = null;
 	ArrayList<reviewDO> arr = new ArrayList<>();
@@ -486,36 +517,7 @@ public ArrayList<reviewDO> userMyReview() {
 }
 
 
-public ArrayList<reviewDO> driverMyReview() {
-	reviewDO vo = null;
-	ArrayList<reviewDO> arr = new ArrayList<>();
-	try {
 
-	getConnection();
-
-	String sql = "select * from review where order_num in(select order_num from order_t where d_id=?)";
-	// 7일 이후 리뷰 뜨는거 못하겠어요...
-	
-	psmt = conn.prepareStatement(sql);
-	
-	ResultSet rs = psmt.executeQuery();
-	
-	
-	
-	while(rs.next()) {
-			float star_rate = rs.getFloat("star_rate");
-			String post = rs.getString("post");
-			
-			vo = new reviewDO(star_rate, post);
-			arr.add(vo);
-			
-	}
-	
-	}catch (Exception e) {
-
-	}
-	return arr;
-}
 
 // 보류 합니다.
 public ArrayList<driverDO> driverManagement() {
