@@ -72,28 +72,14 @@
 								</header>
 											<div class="login_menu">
 												<article>
-													    <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
-													    <label for="tab1">사용자 로그인</label>
 													
-													    <input id="tab2" type="radio" name="tabs">
+													    <input id="tab2" type="radio" name="tabs" checked>
 													    <label for="tab2">드라이버 로그인</label>
 													
 													    <input id="tab3" type="radio" name="tabs">
 													    <label for="tab3">업체 로그인</label>
 													
-													    <section id="content1">
-													        <form action="login.do" method="post">
-																<ul class="actions">
-																	<li><input type="text" name="u_id" placeholder="U_ID를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-																<ul class="actions">
-																	<li><input type="password" name="u_pw" placeholder="PW를 입력하세요" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-																<ul class="actions">
-																	<li><input type="submit" value="login" class="button fit" style="text-align:center; width:313px; height:50px;"></li>
-																</ul>
-															</form>
-													    </section>
+													  
 													
 													    <section id="content2">
 													        <form action="login_driver.do" method="post">
@@ -127,7 +113,6 @@
 								
 										<h4>아직도 회원이 아니신가요?</h4>
 										<ul class="actions">
-											<li><a href="join_user.jsp" class="button">고객용</a></li> <!-- 고객용 회원가입페이지로이동 -->
 											<li><a href="join_driver.jsp" class="button">드라이버용</a></li> <!-- 드라이버용 회원가입페이지로이동 -->
 											<li><a href="join_enter.jsp" class="button">업체용</a></li> <!-- 업체용 회원가입페이지로이동 -->
 										</ul>
@@ -146,10 +131,6 @@
 									<ul>
 										<li><a href="index.jsp">메인</a></li>
 										<li><a href="login.jsp">로그인</a></li>
-										<li><a href="User_usageDetails.jsp">이용내역</a></li>
-										<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
-										<li><a href="#">환경설정</a></li>
-										<!-- 환경설정 구현예정 -->
 										<!-- <li>
 											<span class="opener">Submenu</span>
 											<ul>

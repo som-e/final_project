@@ -3,9 +3,11 @@ package com.DataAccessObject;
 import java.sql.*;
 import java.util.ArrayList;
 
+import com.DataObject.UserUsageDO;
 import com.DataObject.driverDO;
 import com.DataObject.reviewDO; 
 import com.DataObject.enterpriseDO;
+import com.DataObject.orderDO;
 import com.DataObject.userDO; 
 
 
@@ -71,6 +73,7 @@ public class memberDAO {
 	}
 	
 	
+	//드라이버 정보를 가져온다 
 	public static String getDriver(String u_id , int b_num) {
 		String answer = ""; 
 
@@ -88,7 +91,8 @@ try {
 			
 			if(rs.next()) {
 				
-				answer = rs.getString(3) + "&";
+				answer = rs.getString(1) + "&"; 
+				answer = answer + rs.getString(3) + "&";
 				answer = answer + rs.getString(4) + "&";   //별점은 나중에 .
 			    answer = answer + rs.getString(5); 
 				System.out.println(answer);
@@ -104,41 +108,73 @@ return answer;
 	
 	
 	
+	//드라이버 정보를 가져온다 
+	public static int getStar(String driverName) {
+		
+		int answer = 0; 
+
+try {
+			
+			getConnection();
+			
+			String sql =  "select * from reliability where d_id = ?";
+			
+			PreparedStatement psmt = conn.prepareStatement(sql); 
+			System.out.println(driverName);
+			psmt.setString(1, driverName);
+			
+			ResultSet rs = psmt.executeQuery(); 
+			
+			if(rs.next()) {
+				
+				answer = rs.getInt(2); 
+				
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+return answer; 
+		
+	}
 	
-	public userDO Login(String u_id, String u_pw) {
-		userDO u_do = null;
+	
+	
+	//user_usageDetails 을 얻기 위한 order_num , d_name , b_name , date  
+	
+	public ArrayList<UserUsageDO> getUserUsage(String u_id) {
+		
+		UserUsageDO usage = null;
+		
+		ArrayList<UserUsageDO> usage_arr = new ArrayList<>() ; 
 		
 		try {
 			getConnection();
+			System.out.println(u_id);
+			String sql="select distinct order_t.order_num , driver.d_name , business.b_name , order_t.order_date from order_t, driver, business where order_t.u_id = ?";
 			
-			String sql="select * from user where u_id = ? and u_pw = ?";
 			PreparedStatement psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, u_id);
-			psmt.setString(2, u_pw);
 			
 			ResultSet rs = psmt.executeQuery();
-			//executeUpdate : insert / update / delete 
-			//Return : int(sql문 성공횟수)
 			
-			//executeQuery : select
-			//Return : ResultSet(검색한 데이터)
-			if(rs.next()) {
-				//if : 검색한 데이터가 하나일 경우
-				//while : 검색한 데이터가 여러개 일경우
-				String get_u_id = rs.getString(1);
-				String get_u_pw = rs.getString(2);
-				String get_u_name = rs.getString(3);
-				int get_u_num = rs.getInt(4);
+			while(rs.next()) {
 				
-				u_do = new userDO(get_u_id, get_u_pw, get_u_name, get_u_num);
+				int order_num = rs.getInt(1);
+				String d_name = rs.getString(2);
+				String b_name = rs.getString(3);
+				String date = rs.getString(4);
+				
+				usage = new UserUsageDO(order_num , d_name , b_name , date);
+				usage_arr.add(usage);
+				
 				
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return u_do;
+		return usage_arr;
 	}
 
 	public driverDO Login_driver(String d_id, String d_pw) {

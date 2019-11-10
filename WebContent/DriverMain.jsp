@@ -40,7 +40,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a class="logo"><strong> <%%>업체 소속 <%%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
+									<a class="logo"><strong> <%=session.getAttribute("d_do")%> 님 환영합니다. </strong></a> <!-- 점표명 받아서 표시할 부분 -->
 					
 								</header>
 
