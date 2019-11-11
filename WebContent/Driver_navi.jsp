@@ -249,7 +249,9 @@ document.getElementById('getMeter').innerHTML = '남은 거리:' + c + 'm';
 					<ul>
 
 						<li><a href="index.jsp">메인</a></li>
-						<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
+						<li><a href="Driver_navi.jsp">위치 확인</a></li>
+						<li><a href="review_user.jsp">나의 리뷰</a></li>
+						
 						
 						<!-- 환경설정 구현 안함-->
 

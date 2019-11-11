@@ -63,12 +63,7 @@ table, tr, th, td{vertical-align: bottom;}
 				<!-- Header -->
 				<header id="header">
 					<a class="logo"><strong>리뷰작성</strong></a>
-					<!-- 점표명 받아서 표시할 부분 -->
-					<ul class="icons">
-						<li><a href="https://www.yogiyo.co.kr/mobile/#/">
-						<span class="label"><img src="images/yogiyo.png" width="40" height="40" alt="요기요"></span></a></li>
-						<li><a href="#"><span class="label"><img src="images/bae.png" width="40" height="40" alt="배민"></span></a></li>
-					</ul>
+					
 				</header>
 
 				<!-- Section -->

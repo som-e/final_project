@@ -82,13 +82,7 @@ System.out.println(arr[2]);
 
 					<a class="logo"><strong>점포명 : <%=bname%></strong></a>
 					<!-- 점표명 받아서 표시할 부분 -->
-					<ul class="icons">
-						<li><a href="https://www.yogiyo.co.kr/mobile/#/"><span
-								class="label"><img src="images/yogiyo.png" width="40"
-									height="40" alt="요기요"></span></a></li>
-						<li><a href="#"><span class="label"><img
-									src="images/bae.png" width="40" height="40" alt="배민"></span></a></li>
-					</ul>
+					
 				</header>
 
 				<!-- Banner -->
@@ -292,8 +286,6 @@ registration.showNotification(title, options);
 						<h2>Menu</h2>
 					</header>
 					<ul>
-
-						<li><a href="index.jsp">메인</a></li>
 						<li><a href="User_usageDetails.jsp?u_id=<%= u_id %>" >이용내역</a></li>
 						<li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
 						<!-- 환경설정 구현 안함-->

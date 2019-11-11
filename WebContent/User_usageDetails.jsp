@@ -117,8 +117,7 @@
                               <h2>Menu</h2>
                            </header>
                            <ul>
-                              <li><a href="index.jsp">메인</a></li>
-                             
+                              <li><a href="User_main.jsp">메인</a></li>
                               <li><a href="User_usageDetails.jsp">이용내역</a></li>
                               <li><a href="review_user.jsp">내가 작성한 리뷰</a></li>
                             </ul>
