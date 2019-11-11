@@ -47,9 +47,6 @@ public class Front extends HttpServlet {
 		}else if (front.equals("login_enter.do")) {
 			LoginService_enter login = new LoginService_enter();
 			nextpage = login.execute(request,response);	
-		}else if(front.equals("Join.do")) {
-			JoinService join = new JoinService();
-			nextpage = join.execute(request, response);
 		}else if(front.equals("Join_driver.do")) {
 			JoinService_driver join = new JoinService_driver();
 			nextpage = join.execute(request, response);

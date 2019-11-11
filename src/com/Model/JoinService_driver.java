@@ -1,6 +1,7 @@
 package com.Model;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,16 +15,20 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class JoinService_driver implements Command {
+	
 
+	String nextpage = "";
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String saveDirectory = "C:\\Users\\Genie\\Desktop\\workspace\\final_project\\WebContent\\images";
-		int maxPostSize = 5*1024*1024;
+		try { 
+
+		String saveDirectory = "C:\\Users\\GIGABYTE\\Desktop\\workspace\\final_project\\WebContent\\images";
+		int maxPostSize = 10*1024*1024;
 		String encoding = "utf-8";
-		
 		MultipartRequest multi = new MultipartRequest(
 				request,
 				saveDirectory, //파일저장위치
@@ -47,17 +52,38 @@ public class JoinService_driver implements Command {
 		
 		int cnt = dao.Join_driver(d_do);
 		
-		String nextpage = "";
 		
 		if(cnt>0) {
-			request.setAttribute("d_do", d_do);
-			nextpage="index.jsp";
+			System.out.println("회원가입 완료"); 
 			
 			
+			//request.setAttribute("d_do", d_do);
+			
+		
+			  response.setContentType("text/html; charset=utf-8");
+
+				PrintWriter out = response.getWriter();
+				
+				nextpage="index.jsp";
+				
 		}else {
 			System.out.println("가입실패");
 		}
+		
+
+}catch(Exception e) {
+			
+			System.out.println("예외무시");
+
+				
+}
+		
 		return nextpage;
+		
+		
+		
 	}
 
-}
+	}
+	
+	

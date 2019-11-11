@@ -28,7 +28,7 @@ public class memberDAO {
 		try {
 		   Class.forName("oracle.jdbc.driver.OracleDriver"); 
 			      
-			 String driver = "jdbc:oracle:thin:@192.168.0.22:1521:xe";
+			 String driver = "jdbc:oracle:thin:@10.10.46.255:1521:xe";
 			      String userid = "project"; 
 			      String userpwd = "gozldshsh";
 			

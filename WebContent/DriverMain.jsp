@@ -1,5 +1,6 @@
 <%@page import="com.DataObject.enterpriseDO"%>
 <%@page import="com.DataObject.driverDO"%>
+<%@page import="com.DataAccessObject.memberDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -19,6 +20,24 @@
 		margin-left:auto:
 		margin-right:auto:
 		}
+		
+	
+	.star-rating {
+	width: 205px;
+}
+.star-rating, .star-rating span {
+	display: inline-block;
+	height: 39px;
+	overflow: hidden;
+	background: url(images/star.png) no-repeat;
+}
+.star-rating span {
+	background-position: left bottom;
+	line-height: 0;
+	vertical-align: top;
+}
+	
+	
 		</style>
 		
 	</head>
@@ -33,6 +52,10 @@
 	<%	
 	driverDO d_do = (driverDO)session.getAttribute("d_do");
 	enterpriseDO e_do = (enterpriseDO)session.getAttribute("e_do"); 
+	
+
+    int star_avg = memberDAO.getStar(d_do.getD_id()); 
+	
 	%>
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -52,17 +75,31 @@
 								
 								<!--여기에 드라이버 사진을  넣어야 하는데 못했습니다.-->
 									<span class="image object">
-									<img src="images/pic10.jpg" alt="" /> +
+									
+									<img src="images/<%=d_do.getPhoto()%>" alt="" /> 
+									
 									</span>
-								<!--여기에 드라이버 사진을  넣어야 하는데 못했습니다.-->
-								
+									
+									
 								</section>
+
+	                                <p>소속 :<%=d_do.getE_id()%>  </p>
+								
+								
+								<div class="wrap-star" style="color:black;">
+											평균점수
+											<div class='star-rating'>
+											<% System.out.println(star_avg); %>
+												<span style="width: <%=star_avg%>%"></span>
+												<!-- 추후 스크립틀릿으로 별점 정보 받아올 예정 "width:%"-->
+											</div>
+										</div>
 
                                  <form action="#" method="post">
 
 														<ul class="actions">
 														<!--href로 매출페이지와 리뷰페이지를 연결-->
-															<li><a href="#"><input type="button" value="점수"></a> </li><!--평가 페이지 -->
+															<li><a href="Driver_navi.jsp"><input type="button" value="배달출발"></a> </li><!--평가 페이지 -->
 															<li><a href="review_drivers_view.jsp"><input type="button" value="리뷰"></a> </li><!--리뷰 페이지 -->
 														</ul>	
 										

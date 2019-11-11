@@ -28,6 +28,10 @@ public class LoginService_driver implements com.Interface.Command {
 			if(d_do!=null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("d_do", d_do);		
+				
+				//로그인 알림
+				System.out.println("로그인 완료"); 
+				
 				nextpage = "DriverMain.jsp";
 				
 			}else {
